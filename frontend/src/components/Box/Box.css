@@ -1,0 +1,29 @@
+.box-container {
+    position: relative;
+  }
+  
+  
+  .box {
+    /* Define styles for the Box component */
+    position: absolute;
+    top: 0px; /* Position the Box below the "Shop" link */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1; /* Ensure Box appears above other content */
+    border-radius: 0 0 20px 20px;
+    width: 360px;
+  }
+  .box ul{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .box ul li{
+    display: inline-block;
+    text-align: left;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    font-size: smaller;
+  }

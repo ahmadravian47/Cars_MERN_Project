@@ -1,0 +1,54 @@
+
+nav{
+  padding: 1rem 3rem;
+  display: flex;
+  margin-top: 0rem;
+  align-items: center;
+  /* border: 1px solid black; */
+  align-content: center;
+  justify-content: space-between;
+}
+a{
+  cursor: pointer;
+}
+nav .left{
+  display: flex;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  /* border: 1px solid red; */
+}
+.logo h2{
+  font-family: "Pacifico", cursive;
+}
+.links {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+nav a{
+  list-style: none;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Hoxton NorthTrial", sans-serif;
+  padding: 8px 12px;
+  border-radius: 18px;
+}
+.icons{
+  display: flex;
+  align-items: center;
+}
+.icons i{
+  margin-left: 2rem;
+}
+#one:hover,#two:hover,#three:hover,#four:hover,#five:hover{
+  background-color: #010101;
+  color: #fff;
+  cursor: pointer;
+}

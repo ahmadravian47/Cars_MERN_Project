@@ -1,0 +1,131 @@
+/* @font-face {
+    font-family: 'FSP DEMO - Caros Heavy';
+    src: url('C:\Users\Ahmad\AppData\Local\Microsoft\Windows\Fonts\Fontspring-DEMO-caros-extrabold.otf') 
+}
+@font-face {
+    font-family: 'FSP DEMO - Caros Light';
+    src: url('C:\Users\Ahmad\AppData\Local\Microsoft\Windows\Fonts\Fontspring-DEMO-carossoft-bold.otf') 
+} */
+#body{
+   background-color: #fefefe;
+    margin-top: 3rem;
+}
+h1, h2, h3{
+    font-family: 'FSP DEMO - Caros Light';
+    font-weight:600;
+}
+h4, h5, h6, p{
+    font-family: "Hoxton NorthTrial", sans-serif;
+}
+#body h1{
+    text-align: center;
+    width: 100%;
+}
+#body .links{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+a{
+    list-style: none;
+    text-decoration: none;
+}
+.active h5{
+    border-bottom: 2px solid black;
+}
+#body .image{
+   
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#body img{
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+  
+}
+#body .all_images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#body .all_images> div{
+    display: none;
+}
+#body .all_images .active{
+    display: block;
+}
+#body .all_images h4{
+    font-size: large;
+    text-align: center;
+}
+#body .all_images .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+#body .all_images .l{
+    border-bottom: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+#body .all_images .r{
+    padding: 8px 16px;
+    background-color: #010101;
+    color: white;
+    border-radius: 30px;
+    height: 70%;
+}
+
+
+
+/* Sedan.css */
+
+/* Base styles for images */
+.image {
+    opacity: 0; /* Initially hide images */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+  }
+  
+  /* Fade-in animation when image is in view */
+  .fade-in {
+    opacity: 1; /* Show images with fade-in effect */
+  }
+  
+  /* Define fade-in animation using keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply fade-in animation to elements */
+  .image.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards; /* Apply animation to elements with both .image and .fade-in classes */
+  }
+  
+  /* Base styles for buttons */
+  .buttons {
+    opacity: 0; /* Initially hide buttons */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+  }
+  
+  /* Fade-in animation for buttons when image is in view */
+  .image.active .buttons {
+    opacity: 1; /* Show buttons with fade-in effect when image is active */
+  }
+  

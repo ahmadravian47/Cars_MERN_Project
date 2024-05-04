@@ -1,0 +1,130 @@
+/* @font-face {
+    font-family: 'FSP DEMO - Caros Heavy';
+    src: url('C:\Users\Ahmad\AppData\Local\Microsoft\Windows\Fonts\Fontspring-DEMO-caros-extrabold.otf') 
+}
+@font-face {
+    font-family: 'FSP DEMO - Caros Light';
+    src: url('C:\Users\Ahmad\AppData\Local\Microsoft\Windows\Fonts\Fontspring-DEMO-carossoft-bold.otf') 
+} */
+#hero{
+    width: 98%;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+}
+a{
+    font-family: "Hoxton NorthTrial", sans-serif;
+}
+p{
+    font-family: "Hoxton NorthTrial", sans-serif;
+}
+h1{
+    font-family: "FSP DEMO - Caros Heavy";
+    font-size: 48px;
+}
+.page {
+    height: 85vh;
+}
+.page1 video{
+    object-fit: cover;
+}
+.page1 .main .content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    top: 0;
+    width: 50%;
+    height: 100%;
+  
+    padding-left: 4rem;
+}
+.page1 .main .content a {
+    display: inline-block; /* Display as inline block */
+    padding: 5px 10px;      /* Add padding around the text */
+    margin-bottom: 5px;     /* Add space below each link */
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    width: 100px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.page1 .main .overlay{
+    position: absolute;
+    
+}
+.page1{
+    background-color: #a7a0a0;
+}
+.page2{
+    background-color: #ddd5cb;
+    display: flex;align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+}
+.page2 h1{
+    color: #010101;
+    font-family: "FSP DEMO - Caros Light";
+}
+.page2 #a {
+    display: inline-block; /* Display as inline block */
+    padding: 5px 10px;      /* Add padding around the text */
+    margin-bottom: 5px;     /* Add space below each link */
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+}
+.page2 #special{
+    color: #010101;
+    border-bottom: 1px solid #010101;
+    margin-left: 1rem;
+    font-weight: bolder;
+}
+.page2 p{
+    width: 60%;
+}
+
+.page3 {
+    height: 85vh;
+}
+.page3 video{
+    object-fit: cover;
+}
+.page3 .main .content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    color: rgb(0, 0, 0);
+    top: 0;
+    width: 50%;
+    height: 100%;
+  
+    padding-left: 4rem;
+}
+.page3 .main .content a {
+    display: inline-block; /* Display as inline block */
+    padding: 5px 10px;      /* Add padding around the text */
+    margin-bottom: 5px;     /* Add space below each link */
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.page3 .main .overlay{
+    position: absolute;
+    
+}
