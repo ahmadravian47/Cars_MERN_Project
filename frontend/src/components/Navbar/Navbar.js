@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import Box from '../Box/Box'; // Import the Box component
 import { Link } from 'react-router-dom';
 
+const linkstyle={
+  color:'Black',
+  linkstyle:'none'
+}
+
 const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
   const [hoveredLink, setHoveredLink] = useState(null);
 
@@ -38,7 +43,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
           </div>
           <div className="links">
 
-            <Link to='/usedcars' id='two'
+            <Link to='/usecars/all' id='two' style={linkstyle}
               onMouseEnter={() => handleLinkHover('Shop')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
@@ -46,7 +51,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               Shop
             </Link>
 
-            <Link to='/usedcars/suv' id='three'
+            <Link to='/usecars/suv' id='three' style={linkstyle}
               onMouseEnter={() => handleLinkHover('SUV')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
@@ -54,7 +59,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               SUV
             </Link>
 
-            <Link to='/usedcars/sedan' id='four'
+            <Link to='/usecars/sedan' id='four' style={linkstyle}
               onMouseEnter={() => handleLinkHover('Sedan')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
@@ -62,7 +67,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               Sedan
             </Link>
 
-            <Link to='/usedcars/crossover' id='five'
+            <Link to='/usecars/crossover' id='five' style={linkstyle}
               onMouseEnter={() => handleLinkHover('CrossOver')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
