@@ -38,7 +38,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
           </div>
           <div className="links">
 
-            <Link to='/usecars/all' id='two'
+            <Link to='/usedcars' id='two'
               onMouseEnter={() => handleLinkHover('Shop')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
@@ -46,7 +46,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               Shop
             </Link>
 
-            <Link to='/usecars/suv' id='three'
+            <Link to='/usedcars/suv' id='three'
               onMouseEnter={() => handleLinkHover('SUV')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
@@ -54,7 +54,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               SUV
             </Link>
 
-            <Link to='/usecars/sedan' id='four'
+            <Link to='/usedcars/sedan' id='four'
               onMouseEnter={() => handleLinkHover('Sedan')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
@@ -62,7 +62,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               Sedan
             </Link>
 
-            <Link to='/usecars/crossover' id='five'
+            <Link to='/usedcars/crossover' id='five'
               onMouseEnter={() => handleLinkHover('CrossOver')}
               onMouseLeave={handleLinkLeave}
               className="shop-link"
