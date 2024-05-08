@@ -5,11 +5,12 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const Car = require("./models/Car.js");
 const Member = require("./models/Member.js");
+require('dotenv').config();
 
 mongoose
-  .connect("mongodb://localhost:27017/cars")
+  .connect(process.env.DB_STRING)
   .then(() => {
-    console.log("Connected to mongodb://localhost:27017/cars");
+    console.log("Connected to mongodb:cluster1/CarsMernDB");
     // populateCars();
     // populateMembers();
   })
