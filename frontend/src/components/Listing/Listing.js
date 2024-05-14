@@ -35,6 +35,7 @@ const CarList = () => {
           mileage={car.mileage}
           price={car.price}
           front_image={car.images}
+          id={car._id}
         />
       ))}
     </div>

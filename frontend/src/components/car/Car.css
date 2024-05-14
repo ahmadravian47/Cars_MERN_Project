@@ -31,7 +31,7 @@
 #carbox .bold{
     font-weight: bold;
 }
-#carbox a{
+#carbox .car_details{
     list-style: none;
     text-decoration: none;
     background-color: black;

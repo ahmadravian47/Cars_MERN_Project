@@ -1,6 +1,7 @@
 import React from 'react'
 import '../car/Car.css'
 import car_image from '../../assets/car.jpg'
+import { Link } from 'react-router-dom';
 
 
 export default function Car(props) {
@@ -19,7 +20,10 @@ export default function Car(props) {
           <h5>{props.mileage}</h5>
         </div>
       </div>
-      <a>See Details</a>
+      <Link to={`/car/${props.id}`} className='car_details' 
+            >
+              See Details
+            </Link>
 
     </div>
   )
