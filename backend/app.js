@@ -5,7 +5,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const Car = require("./models/Car.js");
 const Member = require("./models/Member.js");
-require('dotenv').config();
+require("dotenv").config();
 
 mongoose
   .connect(process.env.DB_STRING)
@@ -21,6 +21,40 @@ mongoose
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
+// API ENDPOINTS
+
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await Member.findOne({ email: email , password: password});
+  if (user) {
+    res.status(200).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      // pic: user.pic,
+      // token: generateToken(user._id),
+    });
+  } else {
+    res.status(401).send("Invalid Email or Password!");
+    // throw new Error("Invalid Email or Password!");
+  }
+});
+
+
+app.post('/signup',(req,res)=>{
+  const member=new Member(req.body);
+  member
+    .save()
+    .then(() => {
+      res.status(200).json(member);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ message: "Error Signing Up!" });
+    });
+})
+
+
 app.get("/usedcars", async (req, res) => {
   const usedCars = await Car.find({});
   usedCars
@@ -28,31 +62,22 @@ app.get("/usedcars", async (req, res) => {
     : res.status(404).send("Error Fetching Cars");
 });
 
-app.get("/usedcars/suv", async (req, res) => {
-  const usedCars = await Car.find({ type: "SUV" });
+
+app.get("/usedcars/:cartype", async (req, res) => {
+  let carType = req.params.cartype;
+  if (carType === "suv") carType = carType.toUpperCase();
+  console.log(carType);
+  const usedCars = await Car.find({ type: carType });
   usedCars
     ? res.status(200).send(usedCars)
     : res.status(404).send("Error Fetching Cars");
 });
 
-app.get("/usedcars/sedan", async (req, res) => {
-  const usedCars = await Car.find({ type: "sedan" });
-  usedCars
-    ? res.status(200).send(usedCars)
-    : res.status(404).send("Error Fetching Cars");
-});
-
-app.get("/usedcars/crossover", async (req, res) => {
-  const usedCars = await Car.find({ type: "crossover" });
-  usedCars
-    ? res.status(200).send(usedCars)
-    : res.status(404).send("Error Fetching Cars");
-});
 
 app.post("/postadd", (req, res) => {
   // const {owner,make,model,type,year,mileage,price,condition,fuelType,transmission,color,location,images,postedAt}=req.body;
   // console.log(req.body);
-  let car = new Car(req.body);
+  const car = new Car(req.body);
   car
     .save()
     .then(() => {
@@ -60,9 +85,10 @@ app.post("/postadd", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ message: "Error Posting Add" });
+      res.status(500).json({ message: "Error Posting Add!" });
     });
 });
+
 
 app.listen(5000, () => {
   console.log("Server started at port 5000");
