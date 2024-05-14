@@ -1,3 +1,45 @@
 #carbox{
-    border: 2px solid red;
+    background-color:#E8EAF2;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+#carbox img{
+    width: 100%
+}
+#carbox h2{
+    margin-top: 1rem;
+    text-align: center;
+  
+}
+#carbox h6{
+    color: red;
+    text-align: center;
+}
+#carbox .row{
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+#carbox .row .column{
+    display: flex;
+    flex-direction: column;
+}
+#carbox .bold{
+    font-weight: bold;
+}
+#carbox a{
+    list-style: none;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 20px;
 }

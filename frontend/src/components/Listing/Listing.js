@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Car from '../car/Car'
+import '../Listing/Listing.css'
 
 
 const CarList = () => {
@@ -23,8 +24,9 @@ const CarList = () => {
 
   console.log(cars)
   return (
-    <div>
-      <h1>Deals</h1>
+    <>
+    <h1 className='center'>Latest Deals</h1>
+    <div id='make_flex'>
       {cars.map((car) => (
         <Car
           make={car.make}
@@ -32,10 +34,11 @@ const CarList = () => {
           year={car.year}
           mileage={car.mileage}
           price={car.price}
-          // front_image={car.image[0]}
+          front_image={car.images}
         />
       ))}
     </div>
+    </>
   );
 };
 
