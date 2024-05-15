@@ -6,6 +6,11 @@
     column-gap: 16px;
     row-gap: 16px;
     margin-top: 2rem;
+    font-family: "Poppins", sans-serif;
+}
+h1{
+    
+  font-family: "Poppins", sans-serif;
 }
 .center{
     text-align: center;
