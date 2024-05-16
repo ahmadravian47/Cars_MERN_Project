@@ -1,0 +1,18 @@
+#carouselExampleControls{
+    width: 50vw;
+}
+#carouselExampleControls img{
+    width: 100%;
+}
+#carouselExampleControls .carousel-control-prev{
+    color: white;
+}
+.parent{
+    display: flex;
+    border: 2px solid red;
+    width: 90%;
+    margin: 0 auto;
+}
+.parent> div{
+    border: 2px solid yellow;
+}

@@ -20,7 +20,7 @@ const CarList = () => {
       }
     };
     fetchData();
-  }, [cars]); 
+  }, []); 
 
   console.log(cars)
   return (
