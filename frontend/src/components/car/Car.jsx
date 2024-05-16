@@ -1,11 +1,11 @@
 import React from 'react'
 import '../car/Car.css'
-import Accord from '../../assets/accord.png'
-import H6 from '../../assets/Havel.png'
-import Civic from '../../assets/Civicx.png'
-import Reborn from '../../assets/Reborn2.png'
-import Vezel from '../../assets/Vezel2.png'
-import Grande from '../../assets/g.png'
+import Accord from '../../assets/Accord/0.png'
+import H6 from '../../assets/Havel/0.png'
+import Civic from '../../assets/Civic/0.png'
+import Reborn from '../../assets/Reborn/0.png'
+import Vezel from '../../assets/Vezel/0.png'
+import Grande from '../../assets/Grande/0.png'
 import { Link } from 'react-router-dom';
 
 // Create a mapping of model names to image paths
@@ -24,26 +24,30 @@ export default function Car(props) {
 
   return (
     <div id="carbox">
-      <img src={imageSrc} alt={`${props.make} ${props.model}`} />
-      <h4>{props.make} {props.model}</h4>
-      <h6 className='redtext'>PKR {props.price}</h6>
-      <div className='row'>
-        <div className='column'>
-          <h6 className='bold'>Model</h6>
-          <h6>{props.year}</h6>
-        </div>
-        <div className='column'>
-          <h6 className='bold'>Mileage</h6>
-          <h6>{props.mileage}</h6>
-        </div>
-        <div className='column'>
-          <h6 className='bold'>Fuel</h6>
-          <h6>{props.fuel}</h6>
-        </div>
+      <div className='cari' style={{ backgroundImage: `url(${imageSrc})` }}>
       </div>
-      <Link to={`/car/${props.id}`} className='car_details'>
-        See Details
-      </Link>
+      <div className='card'>
+        <h4>{props.make} {props.model}</h4>
+        <h6 className='redtext'>PKR {props.price}</h6>
+        <div className='row'>
+          <div className='column'>
+            <h6 className='bold'>Model</h6>
+            <h6>{props.year}</h6>
+          </div>
+          <div className='column'>
+            <h6 className='bold'>Mileage</h6>
+            <h6>{props.mileage}</h6>
+          </div>
+          <div className='column'>
+            <h6 className='bold'>Fuel</h6>
+            <h6>{props.fuel}</h6>
+          </div>
+        </div>
+
+        <Link to={`/car/${props.id}`} className='car_details'>
+          See Details
+        </Link>
+      </div>
     </div>
   )
 }

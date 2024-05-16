@@ -73,6 +73,15 @@ app.get("/usedcars/:cartype", async (req, res) => {
     : res.status(404).send("Error Fetching Cars");
 });
 
+app.get("/car/:id", async (req, res) => {
+  let id = req.params.id;
+  console.log(id);
+  const usedCars = await Car.find({ _id: id });
+  usedCars
+    ? res.status(200).send(usedCars)
+    : res.status(404).send("Error Fetching Cars");
+});
+
 
 app.post("/postadd", (req, res) => {
   // const {owner,make,model,type,year,mileage,price,condition,fuelType,transmission,color,location,images,postedAt}=req.body;
