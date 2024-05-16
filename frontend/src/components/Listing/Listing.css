@@ -2,9 +2,8 @@
     width: 80%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 16px;
-    row-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
     margin-top: 2rem;
     font-family: "Poppins", sans-serif;
 }

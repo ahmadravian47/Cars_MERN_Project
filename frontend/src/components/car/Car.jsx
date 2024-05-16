@@ -25,16 +25,20 @@ export default function Car(props) {
   return (
     <div id="carbox">
       <img src={imageSrc} alt={`${props.make} ${props.model}`} />
-      <h2>{props.make} {props.model}</h2>
-      <h6>PKR {props.price}</h6>
+      <h4>{props.make} {props.model}</h4>
+      <h6 className='redtext'>PKR {props.price}</h6>
       <div className='row'>
         <div className='column'>
-          <h5 className='bold'>Model</h5>
-          <h5>{props.year}</h5>
+          <h6 className='bold'>Model</h6>
+          <h6>{props.year}</h6>
         </div>
         <div className='column'>
-          <h5 className='bold'>Mileage</h5>
-          <h5>{props.mileage}</h5>
+          <h6 className='bold'>Mileage</h6>
+          <h6>{props.mileage}</h6>
+        </div>
+        <div className='column'>
+          <h6 className='bold'>Fuel</h6>
+          <h6>{props.fuel}</h6>
         </div>
       </div>
       <Link to={`/car/${props.id}`} className='car_details'>
