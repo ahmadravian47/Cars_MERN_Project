@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '../Box/Box'; // Import the Box component
 import { Link } from 'react-router-dom';
+import './Navbar.css'
 
 const linkstyle={
   color:'Black',

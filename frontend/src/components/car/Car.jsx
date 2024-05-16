@@ -1,30 +1,53 @@
 import React from 'react'
 import '../car/Car.css'
-import car_image from '../../assets/car.jpg'
+import Accord from '../../assets/Accord/0.png'
+import H6 from '../../assets/Havel/0.png'
+import Civic from '../../assets/Civic/0.png'
+import Reborn from '../../assets/Reborn/0.png'
+import Vezel from '../../assets/Vezel/0.png'
+import Grande from '../../assets/Grande/0.png'
 import { Link } from 'react-router-dom';
 
+// Create a mapping of model names to image paths
+const carImages = {
+  Accord: Accord,
+  H6: H6,
+  Civic: Civic,
+  Reborn: Reborn,
+  Vezel: Vezel,
+  Grande: Grande
+};
 
 export default function Car(props) {
+  // Get the image source from the mapping
+  const imageSrc = carImages[props.model];
+
   return (
     <div id="carbox">
-      <img src={car_image}></img>
-      <h2>{props.make} {props.model}</h2>
-      <h6>PKR {props.price}</h6>
-      <div className='row'>
-        <div className='column'>
-          <h5 className='bold'>Model</h5>
-          <h5>{props.year}</h5>
-        </div>
-        <div className='column'>
-          <h5 className='bold'>Milleage</h5>
-          <h5>{props.mileage}</h5>
-        </div>
+      <div className='cari' style={{ backgroundImage: `url(${imageSrc})` }}>
       </div>
-      <Link to={`/car/${props.id}`} className='car_details' 
-            >
-              See Details
-            </Link>
+      <div className='card'>
+        <h4>{props.make} {props.model}</h4>
+        <h6 className='redtext'>PKR {props.price}</h6>
+        <div className='row'>
+          <div className='column'>
+            <h6 className='bold'>Model</h6>
+            <h6>{props.year}</h6>
+          </div>
+          <div className='column'>
+            <h6 className='bold'>Mileage</h6>
+            <h6>{props.mileage}</h6>
+          </div>
+          <div className='column'>
+            <h6 className='bold'>Fuel</h6>
+            <h6>{props.fuel}</h6>
+          </div>
+        </div>
 
+        <Link to={`/car/${props.id}`} className='car_details'>
+          See Details
+        </Link>
+      </div>
     </div>
   )
 }
