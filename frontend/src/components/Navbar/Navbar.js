@@ -40,7 +40,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
       <nav>
         <div className='left'>
           <div className="logo">
-            <h2>Ahmad</h2>
+            <h2>AIDS</h2>
           </div>
           <div className="links">
 
