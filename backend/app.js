@@ -25,7 +25,7 @@ app.use(cors());
 
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  const user = await Member.findOne({ email: email , password: password});
+  const user = await Member.findOne({ email: email, password: password });
   if (user) {
     res.status(200).json({
       _id: user._id,
@@ -40,9 +40,8 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
-app.post('/signup',(req,res)=>{
-  const member=new Member(req.body);
+app.post("/signup", (req, res) => {
+  const member = new Member(req.body);
   member
     .save()
     .then(() => {
@@ -52,8 +51,7 @@ app.post('/signup',(req,res)=>{
       console.log(err);
       res.status(500).json({ message: "Error Signing Up!" });
     });
-})
-
+});
 
 app.get("/usedcars", async (req, res) => {
   const usedCars = await Car.find({});
@@ -61,7 +59,6 @@ app.get("/usedcars", async (req, res) => {
     ? res.status(200).send(usedCars)
     : res.status(404).send("Error Fetching Cars");
 });
-
 
 app.get("/usedcars/:cartype", async (req, res) => {
   let carType = req.params.cartype;
@@ -73,6 +70,12 @@ app.get("/usedcars/:cartype", async (req, res) => {
     : res.status(404).send("Error Fetching Cars");
 });
 
+app.get("/car/:id", async (req, res) => {
+  const car = await Car.findById(req.params.id);
+  car
+    ? res.status(200).send(car)
+    : res.status(500).send("Error Fetching Details");
+});
 
 app.post("/postadd", (req, res) => {
   // const {owner,make,model,type,year,mileage,price,condition,fuelType,transmission,color,location,images,postedAt}=req.body;
@@ -88,7 +91,6 @@ app.post("/postadd", (req, res) => {
       res.status(500).json({ message: "Error Posting Add!" });
     });
 });
-
 
 app.listen(5000, () => {
   console.log("Server started at port 5000");
