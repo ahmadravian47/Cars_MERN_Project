@@ -20,28 +20,28 @@ const CarList = () => {
       }
     };
     fetchData();
-  }, []); 
+  }, []);
 
   console.log(cars)
   return (
     <>
-    <h1 className='center'>Latest Deals</h1>
-    <div id='make_flex'>
-    {cars.slice(0, 4).map((car) => (
-  <Car
-    key={car._id} // Adding a key prop to help React identify elements
-    make={car.make}
-    model={car.model}
-    year={car.year}
-    mileage={car.mileage}
-    price={car.price}
-    front_image={car.images}
-    id={car._id}
-    fuel={car.fuelType}
-  />
-))}
+      <h1 className='center'>Latest Deals</h1>
+      <div id='make_flex'>
+        {cars.slice(0, 4).map((car) => (
+          <Car
+            key={car._id} // Adding a key prop to help React identify elements
+            make={car.make}
+            model={car.model}
+            year={car.year}
+            mileage={car.mileage}
+            price={car.price}
+            front_image={car.images}
+            id={car._id}
+            fuel={car.fuelType}
+          />
+        ))}
 
-    </div>
+      </div>
     </>
   );
 };

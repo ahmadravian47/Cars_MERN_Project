@@ -40,7 +40,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
       <nav>
         <div className='left'>
           <div className="logo">
-            <h2>AIDS</h2>
+            <h2>logo</h2>
           </div>
           <div className="links">
 
@@ -90,7 +90,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
       {hoveredLink && (
 
         <div className="box-container">
-          {getBoxComponent()}
+         
         </div>
       )}
     </>

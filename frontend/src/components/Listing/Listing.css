@@ -5,6 +5,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 30px;
     margin-top: 2rem;
+    row-gap: 4rem;
     font-family: "Poppins", sans-serif;
 }
 h1{

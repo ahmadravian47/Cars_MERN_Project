@@ -8,24 +8,31 @@
 #carouselExampleControls .carousel-inner{
     height: 80vh;
 }
+.bold{
+    font-weight: 700;
+}
 #carouselExampleControls h1{
     margin-top: 0.5rem;
     font-size: 36px;
 }
-#carouselExampleControls .detail_box{
+.detail_box{
     border: 1px solid rgb(209, 219, 227);
     margin-top: 2rem;
     padding: 1rem;
+    width: 60%;
+    margin-left: 5rem;
 }
-#carouselExampleControls .detail_box2{
+.detail_box2{
     display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-top: 1rem;
+   
 }
 .child2 h1,h2, h3,h4, h5, h6{
     font-family: "Poppins", sans-serif;
 }
-#carouselExampleControls .detail_box h5{
+.detail_box h5{
     font-weight: 700;
 }
 .child2 h2{
@@ -36,24 +43,18 @@
 #carouselExampleControls img{
     width: 100%;
 }
-#carouselExampleControls .carousel-control-prev{
-    color: white;
-}
 .parent{
     display: flex;
-    /* border: 2px solid red; */
     width: 90%;
     margin: 0 auto;
+    align-items: center;
 }
 .parent> div{
     /* border: 2px solid yellow; */
 }
 .parent .child2{
-   
     width: 40%;
     margin: 0 auto;
-    height: 70%;
-    margin-top: 4rem;
 }
 .parent .child2 a{
     list-style: none;
