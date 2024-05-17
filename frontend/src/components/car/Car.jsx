@@ -1,21 +1,15 @@
-import React from 'react'
-import '../car/Car.css'
-import Accord from '../../assets/Accord/0.png'
-import H6 from '../../assets/H6/0.png'
-import Civic from '../../assets/Civic/0.png'
-import Reborn from '../../assets/Reborn/0.png'
-import Vezel from '../../assets/Vezel/0.png'
-import Grande from '../../assets/Grande/0.png'
+import React from 'react';
+import '../car/Car.css';
 import { Link } from 'react-router-dom';
 
 // Create a mapping of model names to image paths
 const carImages = {
-  Accord: Accord,
-  H6: H6,
-  Civic: Civic,
-  Reborn: Reborn,
-  Vezel: Vezel,
-  Grande: Grande
+  Accord: `${process.env.PUBLIC_URL}/assets/Accord/0.png`,
+  H6: `${process.env.PUBLIC_URL}/assets/H6/0.png`,
+  Civic: `${process.env.PUBLIC_URL}/assets/Civic/0.png`,
+  Reborn: `${process.env.PUBLIC_URL}/assets/Reborn/0.png`,
+  Vezel: `${process.env.PUBLIC_URL}/assets/Vezel/0.png`,
+  Grande: `${process.env.PUBLIC_URL}/assets/Grande/0.png`
 };
 
 export default function Car(props) {
@@ -49,5 +43,5 @@ export default function Car(props) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
