@@ -1,7 +1,7 @@
 import React from 'react'
 import '../car/Car.css'
 import Accord from '../../assets/Accord/0.png'
-import H6 from '../../assets/Havel/0.png'
+import H6 from '../../assets/H6/0.png'
 import Civic from '../../assets/Civic/0.png'
 import Reborn from '../../assets/Reborn/0.png'
 import Vezel from '../../assets/Vezel/0.png'
