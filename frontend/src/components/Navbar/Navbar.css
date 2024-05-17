@@ -7,4 +7,6 @@
 }
 .icons #one{
     color: white;
+    list-style: none;
+    text-decoration: none;
 }

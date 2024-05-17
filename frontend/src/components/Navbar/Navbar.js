@@ -66,7 +66,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
           </div>
         </div>
         <div className='icons'>
-          <a id='one'>Post an Ad</a>
+          <Link to='/addpost' id='one'>Post an Ad</Link>
           <i class="fa-solid fa-1x fa-magnifying-glass"></i>
           <i class="fa-solid fa-1x fa-cart-shopping"></i>
           <i class="fa-regular fa-user"></i>
