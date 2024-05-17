@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import './Navbar.css'
 
 const linkstyle={
-  color:'Black',
-  linkstyle:'none'
+  color:'black',
+  linkstyle:'none',
+  textDecoration:'none'
 }
 
 const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
@@ -20,20 +21,6 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
     setHoveredLink(null);
   };
 
-  const getBoxComponent = () => {
-    switch (hoveredLink) {
-      case 'Shop':
-        return <Box stock={stock} my_margin="200px" />;
-      case 'SUV':
-        return <Box stock={SUV} my_margin="270px" />;
-      case 'Sedan':
-        return <Box stock={SEDAN} my_margin="340px" />;
-      case 'CrossOver':
-        return <Box stock={CROSS} my_margin="410px" />;
-      default:
-        return null;
-    }
-  };
 
   return (
     <>
@@ -79,7 +66,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
           </div>
         </div>
         <div className='icons'>
-          <a id='one'>Support</a>
+          <a id='one'>Post an Ad</a>
           <i class="fa-solid fa-1x fa-magnifying-glass"></i>
           <i class="fa-solid fa-1x fa-cart-shopping"></i>
           <i class="fa-regular fa-user"></i>
@@ -87,12 +74,6 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
 
 
       </nav>
-      {hoveredLink && (
-
-        <div className="box-container">
-         
-        </div>
-      )}
     </>
   );
 };
