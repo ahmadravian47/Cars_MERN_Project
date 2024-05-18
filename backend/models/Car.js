@@ -20,7 +20,7 @@ const mongoose = require("mongoose");
 
 const carSchema = new mongoose.Schema({
   owner: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Member",
     required: true,
   },
@@ -33,6 +33,10 @@ const carSchema = new mongoose.Schema({
     required: true,
   },
   type: {
+    type: String,
+    required: true,
+  },
+  engine: {
     type: String,
     required: true,
   },
@@ -79,6 +83,6 @@ const carSchema = new mongoose.Schema({
   },
 });
 
-const Car = mongoose.model("Cars", carSchema);
+const Car = mongoose.model("Car", carSchema);
 
 module.exports = Car;

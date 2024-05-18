@@ -3,9 +3,11 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
+import Add from "./components/Add/Add";
 import Home from "./pages/Home/Home";
 import UseCars from "./pages/UseCars/UseCars";
 import Car_deatils from "./components/Car_detail/C_detail";
+import LoginForm from "./pages/Login/LoginForm";
 
 function App() {
   const all = ["Honda Vezel", "Toyota CHR", "Mercedes C180", "BMW 350i"];
@@ -34,6 +36,8 @@ function App() {
         <Route path="/usedcars/sedan" element={<UseCars type="sedan" />} />
         <Route path="/usedcars/crossover" element={<UseCars type="crossover" />}/>
         <Route path="/car/:id" element={<Car_deatils />}></Route>
+        <Route path="/addpost" element={<Add />}></Route>
+        <Route path="/login" element={<LoginForm />}></Route>
       </Routes>
       <Footer />
     </>

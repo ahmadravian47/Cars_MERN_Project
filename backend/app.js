@@ -54,10 +54,51 @@ app.post("/signup", (req, res) => {
 });
 
 app.get("/usedcars", async (req, res) => {
-  const usedCars = await Car.find({});
+  console.log(req.query.search);
+  const car = req.query.search;
+
+  let usedCars = null;
+
+  let filter = {};
+  if (car) {
+    // Split the search query into parts (assuming space-separated make and model)
+    const searchParts = car.split(" ");
+
+    // Initialize an empty filter object
+
+    if (searchParts.length === 1) {
+      // If only one part is provided, search for either make or model
+      const searchTerm = searchParts[0];
+      const formattedSearchTerm = searchTerm.toLowerCase();
+      // searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1).toLowerCase();
+      filter = {
+        $or: [{ make: formattedSearchTerm }, { model: formattedSearchTerm }],
+      };
+    } else if (searchParts.length >= 2) {
+      // If two or more parts are provided, assume the first is make and the second is model
+      const make = searchParts[0];
+      const model = searchParts[1];
+      const formattedMake = make.toLowerCase();
+      const formattedModel = model.toLowerCase();
+      filter = {
+        make: formattedMake,
+        model: formattedModel,
+      };
+    }
+
+    // let [make, model] = car.split(" ");
+    // make = make.charAt(0).toUpperCase() + make.slice(1).toLowerCase();
+    // model = model.charAt(0).toUpperCase() + model.slice(1).toLowerCase();
+    // usedCars = await Car.find(filter);
+  }
+
+  usedCars = await Car.find(filter);
+
   usedCars
-    ? res.status(200).send(usedCars)
-    : res.status(404).send("Error Fetching Cars");
+    ? res
+        .status(usedCars.length > 0 ? 200 : 404)
+        .send(usedCars.length > 0 ? usedCars : "No cars found.")
+    : res.status(500).send("Error Fetching Cars");
 });
 
 app.get("/usedcars/:cartype", async (req, res) => {
@@ -71,7 +112,10 @@ app.get("/usedcars/:cartype", async (req, res) => {
 });
 
 app.get("/car/:id", async (req, res) => {
-  const car = await Car.findById(req.params.id);
+  const car = await Car.findById(req.params.id).populate({
+    path: "owner",
+    select: ["name", "phone", "location"],
+  });
   car
     ? res.status(200).send(car)
     : res.status(500).send("Error Fetching Details");
@@ -80,7 +124,13 @@ app.get("/car/:id", async (req, res) => {
 app.post("/postadd", (req, res) => {
   // const {owner,make,model,type,year,mileage,price,condition,fuelType,transmission,color,location,images,postedAt}=req.body;
   // console.log(req.body);
-  const car = new Car(req.body);
+  const newCar={
+    ...req.body,
+    make: req.body.make.toLowerCase(),
+    model: req.body.model.toLowerCase()
+  }
+  console.log(newCar);
+  const car = new Car(newCar);
   car
     .save()
     .then(() => {
@@ -184,54 +234,53 @@ const populateCars = async () => {
 const populateMembers = async () => {
   await Member.insertMany([
     {
-      _id: "user_id_1",
-      username: "user123",
-      email: "user123@example.com",
-      password: "hashed_password_1",
-      name: "John Doe",
-      phone: "123-456-7890",
-      location: "City A, Country A",
-      joinedAt: "2024-05-01T00:00:00Z",
-    },
-    {
-      _id: "user_id_2",
-      username: "user456",
       email: "user456@example.com",
       password: "hashed_password_2",
       name: "Jane Smith",
       phone: "987-654-3210",
       location: "City B, Country B",
-      joinedAt: "2024-05-02T00:00:00Z",
     },
     {
-      _id: "user_id_3",
-      username: "user789",
       email: "user789@example.com",
       password: "hashed_password_3",
       name: "Alice Johnson",
       phone: "555-555-5555",
       location: "City C, Country C",
-      joinedAt: "2024-05-03T00:00:00Z",
     },
     {
-      _id: "user_id_4",
-      username: "user101112",
-      email: "user101112@example.com",
-      password: "hashed_password_4",
-      name: "Bob Brown",
-      phone: "111-222-3333",
-      location: "City D, Country D",
-      joinedAt: "2024-05-04T00:00:00Z",
+      email: "user123@example.com",
+      password: "hashed_password_1",
+      name: "John Doe",
+      phone: "123-456-7890",
+      location: "City A, Country A",
     },
     {
-      _id: "user_id_5",
-      username: "user131415",
       email: "user131415@example.com",
       password: "hashed_password_5",
       name: "Carol Williams",
       phone: "444-444-4444",
       location: "City E, Country E",
-      joinedAt: "2024-05-05T00:00:00Z",
+    },
+    {
+      email: "user101112@example.com",
+      password: "hashed_password_4",
+      name: "Bob Brown",
+      phone: "111-222-3333",
+      location: "City D, Country D",
+    },
+    {
+      email: "user666@example.com",
+      password: "hashed_password_6",
+      name: "Joh Smith",
+      phone: "987-651-3210",
+      location: "City F, Country F",
+    },
+    {
+      email: "user779@example.com",
+      password: "hashed_password_7",
+      name: "Ben Smith",
+      phone: "987-621-3210",
+      location: "City F, Country F",
     },
   ]);
 };

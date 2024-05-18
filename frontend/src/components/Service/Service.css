@@ -1,0 +1,53 @@
+.poppins{
+    font-family: "Poppins", sans-serif;
+}
+.center{
+    text-align: center;
+}
+.services{
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+.card3 {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.card3 h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #000000;
+}
+
+p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.card3 .find-out-more{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #d40000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.card3 .find-out-more:hover {
+    color: #a30000;
+}

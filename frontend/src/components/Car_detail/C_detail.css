@@ -32,9 +32,17 @@
 .child2 h1,h2, h3,h4, h5, h6{
     font-family: "Poppins", sans-serif;
 }
+
 .detail_box h5{
     font-weight: 700;
+    text-transform: capitalize;
 }
+
+.detail_box h6{
+    text-transform: capitalize;
+}
+
+
 .child2 h2{
     font-weight: 600;
     font-size: 40px;
@@ -49,9 +57,9 @@
     margin: 0 auto;
     align-items: center;
 }
-.parent> div{
-    /* border: 2px solid yellow; */
-}
+/* .parent> div{
+    border: 2px solid yellow;
+} */
 .parent .child2{
     width: 40%;
     margin: 0 auto;
