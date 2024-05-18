@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 // Create a mapping of model names to image paths
 const carImages = {
-  Accord: `${process.env.PUBLIC_URL}/assets/Accord/0.png`,
-  H6: `${process.env.PUBLIC_URL}/assets/H6/0.png`,
-  Civic: `${process.env.PUBLIC_URL}/assets/Civic/0.png`,
-  Reborn: `${process.env.PUBLIC_URL}/assets/Reborn/0.png`,
-  Vezel: `${process.env.PUBLIC_URL}/assets/Vezel/0.png`,
-  Grande: `${process.env.PUBLIC_URL}/assets/Grande/0.png`
+  accord: `${process.env.PUBLIC_URL}/assets/Accord/0.png`,
+  h6: `${process.env.PUBLIC_URL}/assets/H6/0.png`,
+  civic: `${process.env.PUBLIC_URL}/assets/Civic/0.png`,
+  reborn: `${process.env.PUBLIC_URL}/assets/Reborn/0.png`,
+  vezel: `${process.env.PUBLIC_URL}/assets/Vezel/0.png`,
+  grande: `${process.env.PUBLIC_URL}/assets/Grande/0.png`
 };
 
 export default function Car(props) {

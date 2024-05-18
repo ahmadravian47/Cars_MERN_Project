@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
 const memberSchema = new mongoose.Schema({
-  _id: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+  // _id: {
+  //   type: String,
+  //   required: true,
+  //   unique: true,
+  // },
+  // username: {
+  //   type: String,
+  //   required: true,
+  //   unique: true,
+  // },
   email: {
     type: String,
     required: true,
@@ -36,5 +36,5 @@ const memberSchema = new mongoose.Schema({
   },
 });
 
-const Member = mongoose.model("Members", memberSchema);
+const Member = mongoose.model("Member", memberSchema);
 module.exports = Member;
