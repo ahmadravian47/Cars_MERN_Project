@@ -14,7 +14,7 @@ const UseCars = ({ type }) => {
 
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/usedcars/${type}`
+        `http://localhost:5000/api/car/usedcars/${type}`
       );
       console.log(data);
       setError(null);
@@ -29,7 +29,7 @@ const UseCars = ({ type }) => {
     console.log("search");
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/usedcars/${search}`
+        `http://localhost:5000/api/car/usedcars/${search}`
       );
       console.log(data);
       setError(null);

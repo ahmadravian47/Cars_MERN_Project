@@ -77,6 +77,7 @@ const carSchema = new mongoose.Schema({
       type: String,
     },
   ],
+  description: String,
   postedAt: {
     type: Date,
     default: Date.now,

@@ -89,7 +89,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
           </div>
         </div>
         <div className="icons">
-          <Link to="/addpost" id="one">
+          <Link to="/postad" id="one">
             Post an Ad
           </Link>
           <form

@@ -10,7 +10,7 @@ export default function C_detail() {
   useEffect(() => {
     const fetchCar = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/car/${id}`);
+        const response = await fetch(`http://localhost:5000/api/car/car/${id}`);
         const result = await response.json();
         setCar(result);
         console.log(car);

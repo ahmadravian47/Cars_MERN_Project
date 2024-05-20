@@ -1,8 +1,8 @@
 // App.js
 
 import React from 'react';
-import './App.css'; // Import your CSS file
-import CarPostForm from './carpostform'; // Import your CarPostForm component
+// import './App.css'; // Import your CSS file
+import CarPostForm from '../../components/CarPostForm/carpostform'; // Import your CarPostForm component
 
 function Postad() {
   return (

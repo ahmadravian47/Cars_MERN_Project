@@ -17,13 +17,14 @@
   
   .label-group {
     margin-bottom: 10px;
-    color: #fff;
+    /* color: #fff; */
+    color: black;
   }
   
   input[type="text"],
   input[type="number"],
   textarea,
-  button {
+  button.postBtn {
     width: 100%;
     padding: 5px;
     margin-top: 5px;
@@ -32,7 +33,7 @@
     border-radius: 4px;
   }
   
-  button {
+  button.postBtn {
     padding: 10px 15px;
     background-color: #007BFF;
     color: white;
@@ -41,7 +42,7 @@
     cursor: pointer;
   }
   
-  button:hover {
+  button.postBtn:hover {
     background-color: #0056b3;
   }
   

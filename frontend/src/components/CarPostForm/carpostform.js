@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './CarPostForm.css';
 
 const CarPostForm = () => {
@@ -26,12 +27,80 @@ const CarPostForm = () => {
   };
 
   const handleFileChange = (e) => {
-    setFormData({ ...formData, images: [...e.target.files] });
+    setFormData({ ...formData, images: e.target.files });
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const data = new FormData();
+    
+  //   for (const key in formData) {
+  //     if (key === 'images') {
+  //       // const imgArr=[];
+  //       Array.from(formData.images).forEach((file, index) => {
+  //         data.append('images', file);
+  //         // data['images'].push=file;
+  //         // imgArr.push(file);
+  //       });
+  //       // data['images']=imgArr;
+  //     } else {
+  //       data.append(key, formData[key]);
+  //       // data[key]=formData[key];
+  //     }
+  //   }
+
+  //   // const newD=new FormData();
+  //   // newD.append('make',formData.make);
+    
+  //   try {
+  //     console.log(data);
+  //     const response = await axios.post('http://localhost:5000/postadd', data, 
+  //     {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data'
+  //       }
+  //     }
+  //     );
+  //     setSubmittedData(response.data);
+  //   } catch (error) {
+  //     console.error('Error posting ad', error);
+  //   }
+  // };
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmittedData(formData);
+    const data = {};
+    
+    for (const key in formData) {
+      // if (key === 'images') {
+      //   const imgArr=[];
+      //   Array.from(formData.images).forEach((file, index) => {
+      //     // data.append('images', file);
+      //     // data['images'].push=file;
+      //     imgArr.push(file);
+      //   });
+      //   data['images']=imgArr;
+      // } else {
+        // data.append(key, formData[key]);
+        data[key]=formData[key];
+      // }
+    }
+
+    // const newD=new FormData();
+    // newD.append('make',formData.make);
+    
+    try {
+      console.log(data);
+      const response = await axios.post('http://localhost:5000/api/user/postad', data, 
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      );
+      setSubmittedData(response.data);
+    } catch (error) {
+      console.error('Error posting ad', error);
+    }
   };
 
   return (
@@ -90,7 +159,7 @@ const CarPostForm = () => {
           <textarea id="description" name="description" value={formData.description} onChange={handleChange} />
         </div>
         <div className="button-group">
-          <button type="submit">Submit</button>
+          <button className='postBtn' type="submit">Submit</button>
         </div>
       </form>
 
@@ -112,8 +181,8 @@ const CarPostForm = () => {
             <div>
               <strong>Images:</strong>
               <div className="images">
-                {Array.from(submittedData.images).map((image, index) => (
-                  <img key={index} src={URL.createObjectURL(image)} alt={`Car ${index + 1}`} />
+                {submittedData.images.map((image, index) => (
+                  <img key={index} src={`/${image}`} alt={`Car ${index + 1}`} />
                 ))}
               </div>
             </div>
