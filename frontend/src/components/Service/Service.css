@@ -4,6 +4,9 @@
 .center{
     text-align: center;
 }
+#f{
+    margin-top: 2rem;
+}
 .services{
     display: flex;
     width: 75%;
@@ -32,7 +35,7 @@
     color: #000000;
 }
 
-p {
+.card3 p {
     font-size: 0.9em;
     color: #555;
     margin: 10px 0;

@@ -7,7 +7,7 @@ import testing_icon from '../../assets/testing.png'
 export default function Service() {
   return (
     <>
-    <h1 className='poppins center'> Offering</h1>
+    <h1 className='poppins center top-margin' id='f'> Offering</h1>
     <div className='services'>
       <div className="card3">
         <div className="icon">

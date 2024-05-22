@@ -10,3 +10,15 @@
     list-style: none;
     text-decoration: none;
 }
+.form-control{
+    color: black;
+}
+.btn{
+    color: black;
+    /* font-weight: bold; */
+    border: 1px solid black;
+}
+.btn:hover{
+    background-color: #010101;
+    border: none;
+}

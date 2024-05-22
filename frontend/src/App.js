@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import UseCars from "./pages/UseCars/UseCars";
 import Car_deatils from "./components/Car_detail/C_detail";
 import LoginForm from "./pages/Login/LoginForm";
+import Signup from "./pages/Signup/Signup";
 import Postad from "./pages/Postad/Postad";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/car/:id" element={<Car_deatils />}></Route>
         <Route path="/postad" element={<Postad />}></Route>
         <Route path="/login" element={<LoginForm />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
       <Footer />
     </>
