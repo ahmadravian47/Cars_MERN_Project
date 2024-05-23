@@ -16,3 +16,14 @@ h1{
     text-align: center;
     margin-top: 4rem;
 }
+
+@media screen and (max-width: 600px){
+  #make_flex{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  #carbox .cari{
+    width: 70%;
+  }
+}

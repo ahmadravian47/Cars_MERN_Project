@@ -22,3 +22,83 @@
     background-color: #010101;
     border: none;
 }
+
+@media screen and (max-width: 600px) {
+    .left .links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+    .left .links.show {
+      display: flex;
+    }
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
+    .icons {
+      flex-direction: column;
+    }
+
+    .icons a {
+      margin: 5px 0;
+      display: none;
+    }
+
+    .icons i.fa-cart-shopping,
+    .icons i.fa-user {
+      display: none;
+    }
+
+    .form-inline.hide-on-mobile {
+        display: none;
+      }
+
+  }
+  
+  /* For larger screens */
+  @media screen and (min-width: 601px) {
+    .menu-icon {
+      display: none;
+    }
+    .left .links {
+      display: flex;
+    }
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo h2 {
+    margin-right: 20px;
+  }
+  
+  .links a {
+    margin-right: 20px;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icons a {
+    background-color: #010101;
+    color: rgb(199, 20, 20);
+    padding: 8px 16px;
+    border-radius: 0;
+  }
+  
+  .icons #one {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+  }

@@ -1,17 +1,17 @@
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Box from "../Box/Box"; // Import the Box component
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const linkstyle = {
   color: "black",
-  linkstyle: "none",
   textDecoration: "none",
 };
 
 const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
   const [hoveredLink, setHoveredLink] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLinkHover = (category) => {
@@ -20,6 +20,10 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
 
   const handleLinkLeave = () => {
     setHoveredLink(null);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   const searchCar = async (e) => {
@@ -42,7 +46,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               CARS
             </h2>
           </div>
-          <div className="links">
+          <div className={`links ${menuOpen ? "show" : ""}`}>
             <Link
               to="/usedcars/"
               id="two"
@@ -87,31 +91,33 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               CrossOver
             </Link>
           </div>
+          <div className="menu-icon" onClick={toggleMenu}>
+            <i className="fa fa-bars"></i>
+          </div>
         </div>
         <div className="icons">
           <Link to="/postad" id="one">
             Post an Ad
           </Link>
           <form
-            class="form-inline"
+            className={`form-inline ${menuOpen ? 'hide-on-mobile' : ''}`}
             onSubmit={searchCar}
             style={{ marginLeft: "20px" }}
           >
             <input
-              class="form-control mr-sm-2"
+              className="form-control mr-sm-2"
               type="search"
               name="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
             </button>
           </form>
 
-          {/* <i class="fa-solid fa-1x fa-magnifying-glass"></i> */}
-          <i class="fa-solid fa-1x fa-cart-shopping"></i>
-          <i class="fa-regular fa-user"></i>
+          <i className="fa-solid fa-1x fa-cart-shopping"></i>
+          <i className="fa-regular fa-user"></i>
         </div>
       </nav>
     </>
@@ -126,3 +132,4 @@ Navbar.propTypes = {
 };
 
 export default Navbar;
+

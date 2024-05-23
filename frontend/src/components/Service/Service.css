@@ -54,3 +54,14 @@
 .card3 .find-out-more:hover {
     color: #a30000;
 }
+
+@media screen and (max-width: 600px){
+    .services{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services .card3{
+        margin-top: 2rem;
+    }
+}
