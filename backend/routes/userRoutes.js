@@ -1,10 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const upload = require('../middleware/upload');
-const { login, signup, postAd } = require("../controllers/userControllers");
+const upload = require("../middleware/upload");
+const verifyToken = require("../middleware/auth");
+const {
+  login,
+  signup,
+  postAd,
+  myAds,
+} = require("../controllers/userControllers");
 
 router.post("/login", login);
 router.post("/signup", signup);
-router.post("/postad", upload.array("images[]"), postAd);
+router.post("/postad", verifyToken, upload.array("images[]"), postAd);
+router.get("/myads/:id", verifyToken, myAds);
 
 module.exports = router;

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
@@ -100,7 +99,7 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
             Post an Ad
           </Link>
           <form
-            className={`form-inline ${menuOpen ? 'hide-on-mobile' : ''}`}
+            className={`form-inline ${menuOpen ? "hide-on-mobile" : ""}`}
             onSubmit={searchCar}
             style={{ marginLeft: "20px" }}
           >
@@ -111,12 +110,17 @@ const Navbar = ({ stock, SUV, SEDAN, CROSS }) => {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <button
+              className="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >
               Search
             </button>
           </form>
 
-          <i className="fa-solid fa-1x fa-cart-shopping"></i>
+          <Link to="/myads">
+            <i className="fa-solid fa-1x fa-cart-shopping"></i>
+          </Link>
           <i className="fa-regular fa-user"></i>
         </div>
       </nav>
@@ -132,4 +136,3 @@ Navbar.propTypes = {
 };
 
 export default Navbar;
-

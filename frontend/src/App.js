@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Add from "./components/Add/Add";
 import Home from "./pages/Home/Home";
@@ -10,6 +10,8 @@ import Car_deatils from "./components/Car_detail/C_detail";
 import LoginForm from "./pages/Login/LoginForm";
 import Signup from "./pages/Signup/Signup";
 import Postad from "./pages/Postad/Postad";
+import { useSelector } from "react-redux";
+import UserAds from "./pages/UserAds/UserAds";
 
 function App() {
   const all = ["Honda Vezel", "Toyota CHR", "Mercedes C180", "BMW 350i"];
@@ -21,6 +23,9 @@ function App() {
     "Mercedes ECG",
     "Chevrolet Cruise",
   ];
+
+  const isLoggedIn=useSelector(state=>state.isLoggedIn);
+  const navigate=useNavigate();
 
   return (
     // <>
@@ -41,6 +46,7 @@ function App() {
         <Route path="/postad" element={<Postad />}></Route>
         <Route path="/login" element={<LoginForm />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/myads" element={<UserAds />}></Route>
       </Routes>
       <Footer />
     </>
