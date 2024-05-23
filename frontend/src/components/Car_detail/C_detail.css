@@ -75,14 +75,59 @@
     margin-top: 2rem;
 }
 
+.child1, .child2{
+    flex: 1;
+}
 
+
+
+@media screen and (max-width: 1024px) {
+    .parent{
+        flex-direction: column;
+    }
+
+    #carouselExampleControls {
+        height: 20vh; /* Set a fixed height for the carousel */
+      }
+      
+    #carouselExampleControls .carousel-inner{
+        height: 100%;
+    }
+    .carousel-item img {
+        height: 100%; /* Make the image take the full height of the carousel item */
+        object-fit: cover; /* Ensure the image covers the carousel item without distortion */
+      }
+
+    .detail_box{
+        width: 65%;
+    }
+    .d-block{
+        height: 100%;
+    }
+
+    .second{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
  @media screen and (max-width: 600px) {
     .parent{
         flex-direction: column;
     }
 
+    #carouselExampleControls {
+        height: 20vh; /* Set a fixed height for the carousel */
+    }
+
     #carouselExampleControls .carousel-inner{
-        height: 20vh;
+        height: 100%;
+    }
+
+    .carousel-item img {
+        height: 100%; /* Make the image take the full height of the carousel item */
+        object-fit: cover; /* Ensure the image covers the carousel item without distortion */
     }
 
     .detail_box{

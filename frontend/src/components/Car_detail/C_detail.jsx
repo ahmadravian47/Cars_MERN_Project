@@ -79,7 +79,7 @@ export default function C_detail() {
           </div>
         ) : null}
       </div>
-      <div>
+      <div className="second">
         <div className="detail_box">
           <h1>PKR {car.price}</h1>
           <h5>
