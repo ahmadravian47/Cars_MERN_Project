@@ -36,9 +36,11 @@ export default function C_detail() {
                 key={index}
                 className={`carousel-item ${index === 0 ? "active" : ""}`}
               >
+                {/* the condition in src is to check if the imageSrc starts with upload which means that they are stored in uploads of backend folder ,else they are hardcoded from above */}
                 <img
                   className="d-block w-100"
-                  src={process.env.PUBLIC_URL + image}
+                  src={String(image).match('^uploads') ? 'http://localhost:5000/' + image :  image}
+                  // src={'http://localhost:5000/' + image}
                   alt={`Slide ${index + 1}`}
                 />
               </div>

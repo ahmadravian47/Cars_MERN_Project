@@ -87,6 +87,7 @@ const UseCars = ({ type, ownerAds }) => {
               front_image={car.images}
               id={car._id}
               fuel={car.fuelType}
+              imageSrc={car.images[0]}
             />
           ))
         ) : (
