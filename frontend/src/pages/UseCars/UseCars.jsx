@@ -3,11 +3,13 @@ import axios from "axios";
 import Car from "../../components/car/Car";
 import { useLocation } from "react-router-dom";
 import { UseSelector, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const UseCars = ({ type, ownerAds }) => {
   const [cars, setCars] = useState([]);
   const [error, setError] = useState(null);
   const { search } = useLocation();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.activeUser);
   search ? console.log(search) : console.log("no search");
 
@@ -58,8 +60,10 @@ const UseCars = ({ type, ownerAds }) => {
       setError(null);
       setCars(data);
     } catch (error) {
+
       console.log("Error", error);
       setError(error.response.data.message);
+      navigate('/login');
     }
   };
 

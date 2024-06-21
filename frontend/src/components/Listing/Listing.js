@@ -25,10 +25,10 @@ const CarList = () => {
   console.log(cars)
   return (
     <>
-      <h1 className='center'>Latest Deals</h1>
+      <h1 className='center f' >Latest Deals</h1>
       <div id='make_flex'>
         {cars.slice(0, 4).map((car) => (
-          <Car
+          <Car className='car'
             key={car._id} // Adding a key prop to help React identify elements
             make={car.make}
             model={car.model}

@@ -40,7 +40,9 @@ const Signup = () => {
         form
       );
       console.log(data);
+      //-----------------------------------------
       navigate("/login");
+      //-----------------------------------------
     } catch (err) {
       console.log(err.response.data.message);
     }
@@ -53,7 +55,7 @@ const Signup = () => {
           <form action="" onSubmit={submitHandler}>
             <h1>Signup</h1>
             <div className="input-box">
-              <input
+              <input className="black"
                 type="text"
                 onChange={handleChange}
                 name="email"
@@ -63,7 +65,7 @@ const Signup = () => {
               <FaUser className="icon" />
             </div>
             <div className="input-box">
-              <input
+              <input className="black"
                 type="password"
                 onChange={handleChange}
                 name="password"
@@ -74,7 +76,7 @@ const Signup = () => {
             </div>
 
             <div className="input-box">
-              <input
+              <input className="black"
                 type="text"
                 onChange={handleChange}
                 name="name"
@@ -84,7 +86,7 @@ const Signup = () => {
               <FaUser className="icon" />
             </div>
             <div className="input-box">
-              <input
+              <input className="black"
                 type="text"
                 onChange={handleChange}
                 name="phone"
@@ -94,7 +96,7 @@ const Signup = () => {
               <FaUser className="icon" />
             </div>
             <div className="input-box">
-              <input
+              <input className="black"
                 type="text"
                 onChange={handleChange}
                 name="location"
@@ -113,14 +115,14 @@ const Signup = () => {
             </div>
 
             <button className="loginbtn" type="submit">
-              Login
+              Signup
             </button>
 
             <div className="register-link">
               <p>
-                Don't have an account?{" "}
+                Already have an account?{" "}
                 <Link href="#" to="/login">
-                  Register
+                  Login
                 </Link>
               </p>
             </div>

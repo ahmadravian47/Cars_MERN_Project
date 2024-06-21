@@ -1,104 +1,151 @@
-
 .icons a{
-   background-color: #010101;
-   color: rgb(199, 20, 20);
-   padding: 8px 16px; 
-   border-radius: 0;
+  background-color: #010101;
+  color: rgb(199, 20, 20);
+  padding: 8px 16px;
+  border-radius: 0;
 }
 .icons #one{
-    color: white;
-    list-style: none;
-    text-decoration: none;
+  color: white;
+  list-style: none;
+  text-decoration: none;
 }
 .form-control{
-    color: black;
+  color: black;
 }
 .btn{
-    color: black;
-    /* font-weight: bold; */
-    border: 1px solid black;
+  color: black;
+  border: 1px solid black;
 }
 .btn:hover{
-    background-color: #010101;
-    border: none;
+  background-color: #010101;
+  border: none;
+}
+nav{
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .hamburger-menu{
+  display: none;
+}
+nav .hamburger-lines{
+  display: none;
+}
+a{
+  cursor: pointer;
+}
+nav .left{
+  display: flex;
+  align-items: center;
+}
+nav .icons{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+nav .icons .mini-icons{
+  margin-left: 2rem;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-right: 4rem;
+}
+.logo h2{
+  font-family: "Pacifico", cursive;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+}
+nav a{
+  list-style: none;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Hoxton NorthTrial", sans-serif;
+  padding: 8px 12px;
+  border-radius: 18px;
+}
+.icons{
+  display: flex;
+  align-items: center;
+}
+.icons i{
+  margin-left: 2rem;
+}
+#one:hover,#two:hover,#three:hover,#four:hover,#five:hover{
+  background-color: #d69e9e;
+  color: #fff;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-    .left .links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-    }
-    .left .links.show {
-      display: flex;
-    }
-    .menu-icon {
-      display: block;
-      cursor: pointer;
-    }
-    .icons {
-      flex-direction: column;
-    }
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
 
-    .icons a {
-      margin: 5px 0;
-      display: none;
-    }
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px 0;
+  transition: 0.4s;
+}
 
-    .icons i.fa-cart-shopping,
-    .icons i.fa-user {
-      display: none;
-    }
-
-    .form-inline.hide-on-mobile {
-        display: none;
-      }
-
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  nav .hamburger-lines{
+    display: block;
   }
-  
-  /* For larger screens */
-  @media screen and (min-width: 601px) {
-    .menu-icon {
-      display: none;
-    }
-    .left .links {
-      display: flex;
-    }
+  nav .hamburger-menu{
+    display: none;
+    opacity: 0; 
+    transition: 'opacity' 1s ease;
   }
-  
-  nav {
-    display: flex;
+  nav .hamburger-menu .innerlink{
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+  nav #one, #two, #three, #four, #five{
+    display: none;
+  }
+  nav{
     justify-content: space-between;
-    align-items: center;
   }
-  
-  .left {
+   nav .logo{
+    margin-left: 1rem;
+  }
+  .hamburger-menu.open {
+    display: block;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    color: black;
+    margin-top: 75px;
+    height: 90vh;
+    width: 60vw;
+    opacity: 0.97;
+    margin-left: -1rem;
   }
   
-  .logo h2 {
-    margin-right: 20px;
+  .hamburger-lines {
+    cursor: pointer;
+  } 
+}
+
+@media (max-width: 624px) {
+  .form-inline{
+    display: none;
   }
-  
-  .links a {
-    margin-right: 20px;
-  }
-  
-  .icons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icons a {
-    background-color: #010101;
-    color: rgb(199, 20, 20);
-    padding: 8px 16px;
-    border-radius: 0;
-  }
-  
-  .icons #one {
-    color: white;
-    list-style: none;
-    text-decoration: none;
-  }
+
+}

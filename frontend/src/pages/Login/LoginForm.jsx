@@ -41,7 +41,8 @@ const LoginForm = () => {
     try {
       const { data } = await axios.post(
         "http://localhost:5000/api/user/login",
-        form
+        form,
+        { withCredentials: true }  // This line ensures cookies are sent and received
       );
       console.log(data);
       const user = { ...data.user, token: data.token };
@@ -52,6 +53,7 @@ const LoginForm = () => {
       console.log(err.response.data.message);
     }
   };
+  
 
   return (
     <div className="logbox">
@@ -60,7 +62,7 @@ const LoginForm = () => {
           <form action="" onSubmit={submitHandler}>
             <h1>Login</h1>
             <div className="input-box">
-              <input
+              <input className="black"
                 type="text"
                 name="email"
                 value={form.email}
@@ -71,7 +73,7 @@ const LoginForm = () => {
               <FaUser className="icon" />
             </div>
             <div className="input-box">
-              <input
+              <input className="black"
                 type="password"
                 name="password"
                 value={form.password}

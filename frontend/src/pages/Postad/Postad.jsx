@@ -81,7 +81,9 @@ const Advertisement = () => {
             Authorization: `Bearer ${user.token}`,
           },
         }
-      );
+      )
+      alert('Ad Posted successfully');
+      navigate("/")
     } catch (error) {
       console.log(error.response.data.message);
     }

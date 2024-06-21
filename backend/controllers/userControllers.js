@@ -10,24 +10,25 @@ const login = async (req, res) => {
   if (!user) {
     return res.status(400).json({ message: "Invalid Email!" });
   }
+
   const isPasswordCorrect = bcrypt.compareSync(password, user.password);
   if (!isPasswordCorrect) {
-    return res.status(400).json({ message: "Invaild Password!" });
+    return res.status(400).json({ message: "Invalid Password!" });
   }
+
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, {
     expiresIn: "1hr",
   });
 
   console.log("Generated Token\n", token);
-  if (req.cookies[`${user._id}`]) {
-    req.cookies[`${user._id}`] = "";
-  }
-  res.cookie(String(user._id), token, {
+  console.log('cookie set id : ', user._id);
+
+  res.cookie('authToken', token, {
     path: "/",
-    expires: new Date(Date.now() + 1000 * 3600),
-    // expires: new Date(Date.now() + 1000 * 30)
+    expires: new Date(Date.now() + 1000 * 3600), // 1 hour
     httpOnly: true,
     sameSite: "lax",
+    secure: process.env.NODE_ENV === "production", // Set to true if using HTTPS
   });
 
   return res.status(200).json({
@@ -37,8 +38,8 @@ const login = async (req, res) => {
   });
 };
 
+
 const signup = async (req, res) => {
-  // const member = new Member(req.body);
   const { email, password, name, location, phone } = req.body;
   const user = await Member.findOne({ email: email });
   if (user) {
@@ -65,7 +66,6 @@ const signup = async (req, res) => {
     });
 };
 
-// Post Ad Route
 const postAd = async (req, res) => {
   console.log(req.body);
   try {
@@ -75,8 +75,6 @@ const postAd = async (req, res) => {
       make: req.body.make.toLowerCase(),
       model: req.body.model.toLowerCase(),
       images: imagePaths,
-      // location: "lahore",
-      // owner: "6647488ba3202018f986ed2d",
     };
 
     const car = new Car(newCarData);
@@ -93,7 +91,21 @@ const myAds = async (req, res) => {
   const car = await Car.find({ owner: req.params.id });
   car
     ? res.status(200).send(car)
-    : res.status(500).json({ message: "Error Fetchong Ads!" });
+    : res.status(500).json({ message: "Error Fetching Ads!" });
+};
+const logout = async (req, res) => {
+  console.log('Logging out user:', req.body.useremail);
+  const user = await Member.findOne({ email: req.body.useremail });
+
+  if (user) {
+    console.log('Cookie before clearing:', req.cookies);
+    res.clearCookie('authToken', { path: "/" });
+    console.log('Cookie cleared');
+    return res.status(200).json({ message: "Successfully Logged Out" });
+  }
+
+  console.log('User not logged in!');
+  return res.status(400).json({ message: "User not logged in!" });
 };
 
 module.exports = {
@@ -101,6 +113,7 @@ module.exports = {
   signup,
   postAd,
   myAds,
+  logout,
 };
 
 const populateMembers = async () => {

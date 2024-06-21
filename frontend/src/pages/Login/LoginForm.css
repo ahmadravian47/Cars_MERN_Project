@@ -65,14 +65,12 @@ form .input-box {
     border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
+    color: #000000;
     padding: 20px 45px 20px 20px;
 }
-
-.input-box input::placeholder {
-    color: #000000;
+.login .input-box .black{
+    color: black;
 }
-
 .input-box .icon {
     position: absolute;
     right: 20px;

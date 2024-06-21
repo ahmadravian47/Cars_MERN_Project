@@ -11,9 +11,9 @@
 #carbox .cari {
     background-position: center;
     background-size: cover; 
-    width: 93%;
+    width: 94%;
     margin: 0 auto;
-    margin-top: 0.6rem;
+    margin-top: 0.5rem;
     border-radius: 16px;
     height: 50%; 
 }
@@ -24,6 +24,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 18px;
 }
 
 #carbox .card{
@@ -76,4 +77,32 @@
     margin-top: 1rem;
     border-radius: 20px;
     font-size: small;
+}
+
+@media screen and (max-width: 1080px) {
+    #carbox{
+        /* border: 2px solid red; */
+        width: 90%;
+        margin: 0 auto;
+    }
+    #carbox .card h4{
+        font-size: 20px;
+    }
+    #carbox .card h6{
+        font-size: 14px;
+    }
+
+}
+@media screen and (max-width: 500px) {
+    #carbox{
+        width: 90%;
+        margin: 0 auto;
+    }
+    #carbox .cari {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 0.5rem;
+        border-radius: 16px;
+        height: 50%; 
+    }
 }

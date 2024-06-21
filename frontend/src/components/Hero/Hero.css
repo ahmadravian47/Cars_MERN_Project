@@ -128,3 +128,114 @@ h1{
     position: absolute;
     
 }
+@media screen  and (max-width:1280px){
+    .page {
+        height: 70vh;
+    }
+    .page h1{
+        font-size: 38px;
+        /* border: 2px solid white; */
+    }
+    .page2 .left{
+        /* border: 2px solid red; */
+        width: 50%;
+    }
+    .page2 .left h1{
+        font-size: 32px;
+    }
+    .page2 .left p{
+        width: 80%;
+        font-size: 14px;
+    }
+    .page2 .right{
+        /* border: 2px solid red; */
+        width: 50%;
+    }
+    .page2 .right img{
+        width: 100%;
+    }
+    .page2 #a {
+        padding: 8px 18px;      /* Add padding around the text */
+        width: auto;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 400;
+        font-size: small;
+    }
+}
+@media screen  and (max-width:768px){
+    .page {
+        height: 60vh;
+    }
+    .page h1{
+        font-size: 32px;
+    }
+    .page1 .main{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .page1 .main .content{
+        width: 100%;
+        align-items: center;
+        padding: 0;
+    }
+    .page1 .main .content h1{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .page1 .main .content p{
+        margin-top: 0.5rem;
+    }
+    .page2{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .page2 .left{
+        width: 95%;
+        margin: 0 auto;
+    }
+    .page2 .left h1{
+        text-align: center;
+    }
+    .page2 .left p{
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .page2 .left .link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .page2 .right{
+        display: none;
+    }
+    .page1, .page3 a{
+        width: auto;
+        font-size: small;
+        padding: 0 ;
+    }
+    .page3 .main .content{
+        width: 100%;
+        align-items: center;
+        padding: 0;
+    }
+    .page3 .main .content h1{
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .page3 p{
+        margin-top: 0.5rem;
+        font-size: 13px;
+    }
+}
+@media screen and (max-height:1280px) and (max-width:890px) and (min-width:768px){
+    .page {
+        height: 50vh;
+        /* border: 2px solid red; */
+    }
+}
