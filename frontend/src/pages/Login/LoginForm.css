@@ -1,6 +1,6 @@
 .wrapper {
     position: relative;
-    width: 40vw;
+    width: 100vw;
     background-color: transparent;
     border: 2px solid rgb(255, 255, 255, .2);
     backdrop-filter: blur(20px);
@@ -143,4 +143,29 @@ form .register-link {
   background: rgb(255, 255, 255);
   background-size: cover;
   background-position: center;
+}
+@media screen and (max-width:1200px){
+    .logbox> div{
+        width: 50vw;
+    }
+}
+@media screen and (max-width:1000px){
+    .logbox> div{
+        width: 60vw;
+    }
+}
+@media screen and (max-width:700px){
+    .logbox> div{
+        width: 70vw;
+    }
+}
+@media screen and (max-width:600px){
+    .logbox> div{
+        width: 80vw;
+    }
+}
+@media screen and (max-width:500px){
+    .logbox> div{
+        width: 90vw;
+    }
 }

@@ -146,3 +146,30 @@ form .register-link {
   background-size: cover;
   background-position: center;
 }
+
+
+@media screen and (max-width:1200px){
+    .logbox> div{
+        width: 50vw;
+    }
+}
+@media screen and (max-width:1000px){
+    .logbox> div{
+        width: 60vw;
+    }
+}
+@media screen and (max-width:700px){
+    .logbox> div{
+        width: 70vw;
+    }
+}
+@media screen and (max-width:600px){
+    .logbox> div{
+        width: 80vw;
+    }
+}
+@media screen and (max-width:500px){
+    .logbox> div{
+        width: 90vw;
+    }
+}

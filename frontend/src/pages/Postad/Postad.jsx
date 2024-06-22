@@ -87,25 +87,6 @@ const Advertisement = () => {
     } catch (error) {
       console.log(error.response.data.message);
     }
-    // fetch("http://localhost:5000/api/user/postad", {
-    //   method: "POST",
-    //   body: formData,
-    //   headers: {
-    //     Authorization: `Bearer ${user.tokenn}`,
-    //   },
-    // })
-    //   .then((res) => {
-    //     if (!res.ok) {
-    //       throw new Error(`Network response was not ok: ${res.statusText}`);
-    //     }
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     console.log("Ad posted", data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error posting ad:", error);
-    //   });
   };
 
   return (

@@ -5,9 +5,6 @@
 #carouselExampleControls h1,h2, h3,h4, h5, h6{
     font-family: "Poppins", sans-serif;
 }
-#carouselExampleControls .carousel-inner{
-    height: 80vh;
-}
 .bold{
     font-weight: 700;
 }
@@ -57,9 +54,6 @@
     margin: 0 auto;
     align-items: center;
 }
-/* .parent> div{
-    border: 2px solid yellow;
-} */
 .parent .child2{
     margin: 30px;
 }
@@ -80,22 +74,102 @@
 }
 
 
+/* .parent{
+    border: 2px solid black;
+}
+.parent .child1{
+    border: 2px solid red;
+}
+.parent .child1 .carousel-inner{
+    border: 2px solid yellow;
+}
+.parent .child2{
+    border: 2px solid red;
+}
+.parent .child1 .carousel-inner .carousel-item {
+    border: 2px solid green;
+}
+.parent .child1 .carousel-inner .carousel-item img {
+    border: 2px solid rgb(0, 6, 128);
+}
+.parent .child2{
+    border: 2px solid red;
+    margin: 0;
+} */
+@media screen and (max-width: 1400px) {
+    .child1{
+        flex: 0.6;
+    }
+    .child2{
+        flex: 0.4;
+    }
+}
+@media screen and (max-width: 1000px) {
+   .child2 h2{
+    font-size: 32px;
+   }
+   .child2 a{
+    padding: 8px 16px;
+   }
+   .detail_box {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+   .second .detail_box h1{
+    font-size: 32px;
+   }
+}
+@media screen and (max-width: 768px) {
+    #carouselExampleControls {
+        width: 70vw;
+    }
+    .parent{
+        display: block;
+        width: 100%;
+        padding: 0;
+    }  
+    .child1{
+        width: 60vw;
+        margin: 0 auto;
+    }
+  
+    .parent .child2{
+        border: 1px solid rgb(209, 219, 227);
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+        padding: 1rem;
+    }
+}
+@media screen and (max-width:630px){
+    #carouselExampleControls{
+        width: 90vw;
+    }
+}
+@media screen and (max-width:500px){
+  .second .detail_box h6{
+   font-size: small;
+  }
+}
 
-@media screen and (max-width: 1024px) {
+
+
+/* @media screen and (max-width: 500px) {
     .parent{
         flex-direction: column;
     }
 
     #carouselExampleControls {
-        height: 20vh; /* Set a fixed height for the carousel */
+        height: 20vh; 
       }
       
     #carouselExampleControls .carousel-inner{
         height: 100%;
     }
     .carousel-item img {
-        height: 100%; /* Make the image take the full height of the carousel item */
-        object-fit: cover; /* Ensure the image covers the carousel item without distortion */
+        height: 100%; 
+        object-fit: cover; 
       }
 
     .detail_box{
@@ -111,14 +185,14 @@
         flex-direction: column;
     }
 
-}
- @media screen and (max-width: 600px) {
+} */
+ /* @media screen and (max-width: 500px) {
     .parent{
         flex-direction: column;
     }
 
     #carouselExampleControls {
-        height: 20vh; /* Set a fixed height for the carousel */
+        height: 20vh;
     }
 
     #carouselExampleControls .carousel-inner{
@@ -126,8 +200,8 @@
     }
 
     .carousel-item img {
-        height: 100%; /* Make the image take the full height of the carousel item */
-        object-fit: cover; /* Ensure the image covers the carousel item without distortion */
+        height: 100%; 
+        object-fit: cover; 
     }
 
     .detail_box{
@@ -141,8 +215,7 @@
     }
 } 
 
-/* For medium screens (tablets, etc.) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 504px) {
     .detail_box {
         width: 70%;
         margin-left: 2rem;
@@ -152,8 +225,7 @@
     }
 }
 
-/* For small screens (large smartphones, etc.) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 508px) {
     .detail_box {
         width: 80%;
         margin-left: 1rem;
@@ -163,20 +235,19 @@
     }
 }
 
-/* For extra small screens (small smartphones, etc.) */
 @media screen and (max-width: 600px) {
     .detail_box {
         width: 90%;
-        margin: 0 auto; /* Center the box */
+        margin: 0 auto; 
     }
     .detail_box2 {
-        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-columns: 1fr;
     }
     .detail_box h1, .detail_box h5, .detail_box h3, .detail_box h6 {
-        text-align: center; /* Center align text */
+        text-align: center;
     }
 
     #carouselExampleControls {
         width: 90vw;
     }
-}
+} */

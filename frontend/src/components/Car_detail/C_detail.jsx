@@ -25,49 +25,22 @@ export default function C_detail() {
   return (
     <>
       <div className="parent">
-        <div
-          id="carouselExampleControls"
-          className="carousel slide child1"
-          data-ride="carousel"
-        >
+        <div id="carouselExampleControls" className="carousel slide child1" data-ride="carousel" >
           <div className="carousel-inner">
             {images.map((image, index) => (
-              <div
-                key={index}
-                className={`carousel-item ${index === 0 ? "active" : ""}`}
-              >
-                {/* the condition in src is to check if the imageSrc starts with upload which means that they are stored in uploads of backend folder ,else they are hardcoded from above */}
-                <img
-                  className="d-block w-100"
-                  src={String(image).match('^uploads') ? 'http://localhost:5000/' + image :  image}
-                  // src={'http://localhost:5000/' + image}
+              <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`} >
+                <img className="d-block w-100" src={String(image).match('^uploads') ? 'http://localhost:5000/' + image :  image}
                   alt={`Slide ${index + 1}`}
                 />
               </div>
             ))}
           </div>
-          <a
-            className="carousel-control-prev"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
+          <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" >
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
           </a>
-          <a
-            className="carousel-control-next"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
+          <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
           </a>
         </div>

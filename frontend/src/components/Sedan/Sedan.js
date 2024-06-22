@@ -35,7 +35,7 @@ export default function Sedan() {
 
   return (
     <div id='body'>
-      <h1>Sedan</h1>
+      <h1 className='f'>Sedan</h1>
       <div className='links'>
         <a onClick={() => handleButtonClick('one')} className={activeButton === 'one' ? 'active' : ''}><h5>Honda Civic</h5></a>
         <a onClick={() => handleButtonClick('two')} className={activeButton === 'two' ? 'active' : ''}><h5>Hyundai Elantra</h5></a>
@@ -46,7 +46,7 @@ export default function Sedan() {
       <div className='all_images'>
         <div className={`image ${activeButton === 'one' ? 'active fade-in' : ''}`}> 
           <img src={civic} alt='Honda Civic' />
-          <h1>Honda Civic</h1>
+          <h1 className='f'>Honda Civic</h1>
           <h4>Introducing the 11th generation</h4>
           <div className='buttons'>
             <a className='l fade-in'>Learn more</a>
@@ -56,7 +56,7 @@ export default function Sedan() {
 
         <div className={`image ${activeButton === 'two' ? 'active fade-in' : ''}`}> 
           <img src={elantra} alt='Hyundai Elantra' />
-          <h1>Hyundai Elantra</h1>
+          <h1 className='f'>Hyundai Elantra</h1>
           <h4>Get the Feel of Luxury</h4>
           <div className='buttons'>
             <a className='l fade-in'>Learn more</a>
@@ -66,7 +66,7 @@ export default function Sedan() {
 
         <div className={`image ${activeButton === 'three' ? 'active fade-in' : ''}`}> 
           <img src={grande} alt='Toyota Corolla Grande' />
-          <h1>Toyota Corolla Grande</h1>
+          <h1 className='f'>Toyota Corolla Grande</h1>
           <h4>Have fun of Paddle Shifter</h4>
           <div className='buttons'>
             <a className='l fade-in'>Learn more</a>
@@ -76,7 +76,7 @@ export default function Sedan() {
 
         <div className={`image ${activeButton === 'four' ? 'active fade-in' : ''}`}> 
           <img src={city} alt='Honda City' />
-          <h1>Honda City</h1>
+          <h1 className='f'>Honda City</h1>
           <h4>Enjoy the best fuel average</h4>
           <div className='buttons'>
             <a className='l fade-in'>Learn more</a>
