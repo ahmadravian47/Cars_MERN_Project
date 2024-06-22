@@ -109,8 +109,14 @@
        font-size: 0.8rem;
     }
 }
+@media screen and (min-width:401px) and (max-width:500px){
+    .services{
+        column-gap: 0rem;
+        width: 97%;
+}
+}
 
-@media screen and (max-width:500px){
+@media screen and (max-width:400px){
     
     #f{
         font-size: 32px;

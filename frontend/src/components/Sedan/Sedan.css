@@ -33,7 +33,7 @@ a{
     text-decoration: none;
 }
 .active h5{
-    border-bottom: 2px solid black;
+    font-weight: bolder;
 }
 #body .image{
    
@@ -90,20 +90,15 @@ a{
 
 
 
-/* Sedan.css */
-
-/* Base styles for images */
 .image {
-    opacity: 0; /* Initially hide images */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
   }
   
-  /* Fade-in animation when image is in view */
+ 
   .fade-in {
-    opacity: 1; /* Show images with fade-in effect */
+    opacity: 1; 
   }
-  
-  /* Define fade-in animation using keyframes */
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -127,5 +122,53 @@ a{
   /* Fade-in animation for buttons when image is in view */
   .image.active .buttons {
     opacity: 1; /* Show buttons with fade-in effect when image is active */
+  }
+
+  @media screen and (max-width:1000px) {
+    #body .links{
+        width: 85%;
+    }
+    #body .links h5{
+    width: 70%;
+        text-align: center;
+    }
+  }
+  @media screen and (max-width:500px) {
+    #body .links{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #body .links h5{
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 1rem;
+    }
+  }
+  @media screen and (max-width:400px) {
+    #body .links{
+        width: 97%;
+        margin: 0 auto;
+    }
+    #body .links h5{
+        font-size: 13px;
+        margin: 0 auto;
+    }
+  }
+  @media screen and (max-width:300px) {
+    #body .links h5{
+        padding: 0 0.5rem;
+    }
+  }
+  @media screen and (max-width:400px) {
+    #body .links{
+        width: 97%;
+        margin: 0 auto;
+    }
+    #body .links h5{
+        font-size: 13px;
+        margin: 0 auto;
+    }
   }
   

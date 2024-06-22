@@ -2,6 +2,7 @@ import React from "react";
 import UseCars from "../UseCars/UseCars";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import './UserAds.css'
 
 const UserAds = () => {
   const navigate = useNavigate();
@@ -41,17 +42,19 @@ const UserAds = () => {
   const out = () => {
     logout();
   }
-  if (is_login()){
+  if (is_login()) {
     return <>
-    <UseCars ownerAds />;
-    <button onClick={out}>Log out</button>
-  </>
+      <UseCars ownerAds />
+      <button className="c" onClick={out}>Log out</button>
+    </>
   }
-  else{
+  else {
     return <>
-    <h3>You are not Signed in ,sign in to see your ads</h3>
-    <button onClick={()=>{navigate('/login')}}>Sign In</button>
-  </>
+      <div className="div">
+        <h3 className="center m">You are not Signed in ,sign in to see your ads</h3>
+        <button className="c" onClick={() => { navigate('/login') }}>Sign In</button>
+      </div>
+    </>
   }
 
 };

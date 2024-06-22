@@ -39,7 +39,7 @@ export default function Sedan() {
       <div className='links'>
         <a onClick={() => handleButtonClick('one')} className={activeButton === 'one' ? 'active' : ''}><h5>Honda Civic</h5></a>
         <a onClick={() => handleButtonClick('two')} className={activeButton === 'two' ? 'active' : ''}><h5>Hyundai Elantra</h5></a>
-        <a onClick={() => handleButtonClick('three')} className={activeButton === 'three' ? 'active' : ''}><h5>Toyota Corolla Grande</h5></a>
+        <a onClick={() => handleButtonClick('three')} className={activeButton === 'three' ? 'active' : ''}><h5>Toyota Corolla</h5></a>
         <a onClick={() => handleButtonClick('four')} className={activeButton === 'four' ? 'active' : ''}><h5>Honda City</h5></a>
       </div>
 
